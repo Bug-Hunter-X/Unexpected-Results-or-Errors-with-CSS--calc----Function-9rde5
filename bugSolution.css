@@ -1,0 +1,11 @@
+To mitigate the negative width issue and improve the robustness of the calculation, use `max()` function to ensure the width never becomes negative. Also, strictly adhere to the correct spacing within `calc()`. Here's an improved version:
+
+```css
+.element {
+  width: calc(max(0, 50% - 10vw));
+}
+```
+
+This corrected code utilizes the `max()` function to ensure that the calculated width never drops below zero.  It first calculates `50% - 10vw`, then compares it against 0 and sets the width to the larger value. This prevents negative width values and avoids unexpected behaviors.
+
+It is also good practice to avoid any unnecessary spaces within the `calc()` function to eliminate potential parsing issues.
